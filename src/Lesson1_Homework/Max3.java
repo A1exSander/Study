@@ -5,6 +5,7 @@ public class Max3 {
         int max=0, a=123;
         max = (a%100/10>=a%10) ? a%100/10 : a%10;
         max = (a/100>max) ? a/100 : max;
+        System.out.println("Наибольшая цифра:");
         System.out.println(max);
     }
 }
