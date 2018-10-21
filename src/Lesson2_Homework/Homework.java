@@ -100,7 +100,7 @@ public class Homework {
 //        сколько счастливых билетов в одном рулоне?
         int happyCounter=0;
         for (int ticketNum=1; ticketNum<1000000; ticketNum++){
-            if (ticketNum/100000 + ticketNum/10000%10 + ticketNum/1000%100 == ticketNum/100%1000 + ticketNum/10%10000 + ticketNum%100000) happyCounter++;
+            if (ticketNum/100000 + ticketNum%100000/10000+ ticketNum%10000/1000 == ticketNum%1000/100 + ticketNum%100/10 + ticketNum%10) happyCounter++;
         }
         System.out.println("Количество счастливых битетов: " + happyCounter);
 
