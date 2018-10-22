@@ -18,35 +18,19 @@ public class Homework {
 //      Числа в переменных a, b и c: 7, 0, -5
 //      Возрастающая последовательность: -5, 0, 7
         final int a=1, b=5, c=-10;
-        int first, second, third;
+        int first=a, second=b, third=c;
         System.out.println("Задание 1");
-        if (a<b && a<c) {
-            first=a;
-            if (b<c){
-                second=b;
-                third=c;
-            } else {
-                second=c;
-                third=b;
-            }
-        } else if (b<a && b<c) {
-            first = b;
-            if (a < c) {
-                second = a;
-                third = c;
-            } else {
-                second = c;
-                third = a;
-            }
-        } else {
-            first = c;
-            if (a < b) {
-                second = a;
-                third = b;
-            } else {
-                second = b;
-                third = a;
-            }
+        if (b>c) {
+            second=c;
+            third=b;
+        }
+        if (a>third) {
+            first = second;
+            second=third;
+            third = a;
+        } else if(a>second) {
+            first = second;
+            second = a;
         }
         System.out.println("Упорядоченная последовательность чисел: "+first+" "+second+" "+third);
         System.out.println();
