@@ -75,11 +75,14 @@ public class Homework {
 //        Задача 4
 //        Проверьте, является ли натуральное число — простым.
 //        (Метод перебора делителей)
-        int number=59, j=0, div=2;
         System.out.println("Задание 4");
-        while ((j!=1) && (div*div<=number)) {
-            if (number%div==0) j=1;
-            div++;
+        System.out.println("Введите натуральное число");
+        Scanner num = new Scanner(System.in);
+        int number= num.nextInt();
+        int j=0, div=2;
+            while ((j != 1) && (div * div <= number)) {
+                if (number % div == 0) j = 1;
+                div++;
             }
         if (j==0) System.out.println("Число простое");
         else System.out.println("Число составное");
