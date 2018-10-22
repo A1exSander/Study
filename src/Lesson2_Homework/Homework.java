@@ -66,7 +66,7 @@ public class Homework {
         int j=0, div=6;
         if (number % 2==0) j = 1;
         if (number % 3==0) j = 1;
-            while ((j != 1) && (div * div <= number)) {
+            while ((j != 1) && ((div-1) * (div-1) <= number)) {
                 if (number % (div-1) == 0) j = 1;
                 if ((div+1)*(div+1) > number) break;
                 if (number % (div+1)==0) j = 1;
