@@ -63,10 +63,14 @@ public class Homework {
         System.out.println("Введите натуральное число");
         Scanner num = new Scanner(System.in);
         int number= num.nextInt();
-        int j=0, div=2;
+        int j=0, div=6;
+        if (number % 2==0) j = 1;
+        if (number % 3==0) j = 1;
             while ((j != 1) && (div * div <= number)) {
-                if (number % div == 0) j = 1;
-                div++;
+                if (number % (div-1) == 0) j = 1;
+                if ((div+1)*(div+1) > number) break;
+                if (number % (div+1)==0) j = 1;
+                div = div+6;
             }
         if (j==0) System.out.println("Число простое");
         else System.out.println("Число составное");
