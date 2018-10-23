@@ -64,19 +64,20 @@ public class HomeworkStrings {
             }
             k++;
         }
+        System.out.println(counter2);
 
         if (counter2>0) {
 
             int[] result = new int[counter2];
 
             k = 0;
-            counter2 = 0;
+            counter2 = -1;
             while (k < chars2.length) {
                 if (chars2[k] == '0' || chars2[k] == '1' || chars2[k] == '2' || chars2[k] == '3' || chars2[k] == '4' || chars2[k] == '5' || chars2[k] == '6' || chars2[k] == '7' || chars2[k] == '8' || chars2[k] == '9') {
                     startpos = k;
                     counter2++;
                     while (chars2[k] == '0' || chars2[k] == '1' || chars2[k] == '2' || chars2[k] == '3' || chars2[k] == '4' || chars2[k] == '5' || chars2[k] == '6' || chars2[k] == '7' || chars2[k] == '8' || chars2[k] == '9') {
-                        endpos = k;
+                        endpos = k+1;
                         if (k + 1 < chars2.length) k++;
                         else break;
                     }
