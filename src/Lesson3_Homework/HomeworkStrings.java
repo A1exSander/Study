@@ -52,7 +52,7 @@ public class HomeworkStrings {
 // Вытаскивание чисел
         System.out.println("Введите строку");
         String string4 = scanString.nextLine();
-        int counter2=0, k=0, startpos;
+        int counter2=0, k=0, startpos=0, endpos=0;
         char[] chars2 = string4.toCharArray();
         while (k<chars2.length) {
             if (chars2[k]=='0' || chars2[k]=='1' || chars2[k]=='2' || chars2[k]=='3' || chars2[k]=='4' || chars2[k]=='5' || chars2[k]=='6' || chars2[k]=='7' || chars2[k]=='8' || chars2[k]=='9') {
@@ -64,23 +64,27 @@ public class HomeworkStrings {
             }
             k++;
         }
-        int[] result = new int[counter2];
 
-        k=0;
-        counter2=0;
-        while (k<chars2.length) {
-            if (chars2[k]=='0' || chars2[k]=='1' || chars2[k]=='2' || chars2[k]=='3' || chars2[k]=='4' || chars2[k]=='5' || chars2[k]=='6' || chars2[k]=='7' || chars2[k]=='8' || chars2[k]=='9') {
-                startpos=k;
-                counter2++;
-                while (chars2[k]=='0' || chars2[k]=='1' || chars2[k]=='2' || chars2[k]=='3' || chars2[k]=='4' || chars2[k]=='5' || chars2[k]=='6' || chars2[k]=='7' || chars2[k]=='8' || chars2[k]=='9') {
-                    if (k+1<chars2.length) k++;
-                    else break;
+        if (counter2>0) {
+
+            int[] result = new int[counter2];
+
+            k = 0;
+            counter2 = 0;
+            while (k < chars2.length) {
+                if (chars2[k] == '0' || chars2[k] == '1' || chars2[k] == '2' || chars2[k] == '3' || chars2[k] == '4' || chars2[k] == '5' || chars2[k] == '6' || chars2[k] == '7' || chars2[k] == '8' || chars2[k] == '9') {
+                    startpos = k;
+                    counter2++;
+                    while (chars2[k] == '0' || chars2[k] == '1' || chars2[k] == '2' || chars2[k] == '3' || chars2[k] == '4' || chars2[k] == '5' || chars2[k] == '6' || chars2[k] == '7' || chars2[k] == '8' || chars2[k] == '9') {
+                        endpos = k;
+                        if (k + 1 < chars2.length) k++;
+                        else break;
+                    }
+                    result[counter2] = Integer.parseInt(string4.substring(startpos, endpos));
                 }
-                result[counter2] = Integer.parseInt(string4.substring(startpos, k));
+                k++;
             }
-            k++;
-        }
-        System.out.println(Arrays.toString(result));
-
+            System.out.println(Arrays.toString(result));
+        } else System.out.println("В строке нет чисел");
     }
 }
