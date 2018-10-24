@@ -83,6 +83,7 @@ public class HomeworkStrings {
                     counter2++;
                     while (chars2[k] == '0' || chars2[k] == '1' || chars2[k] == '2' || chars2[k] == '3' || chars2[k] == '4' || chars2[k] == '5' || chars2[k] == '6' || chars2[k] == '7' || chars2[k] == '8' || chars2[k] == '9') {
                         endpos = k+1;
+//                        result[counter2]=result[counter2]*10+Character.getNumericValue(chars2[k]); - альтернативный способ
 //substring считает первую позицию включительно, а последнюю исключительно. При k больше максимального индекса массива все равно работает
                         if (k + 1 < chars2.length) k++;
                         else break;
@@ -92,6 +93,7 @@ public class HomeworkStrings {
                 }
                 k++;
             }
+
             System.out.println(Arrays.toString(result));
         } else System.out.println("В строке нет чисел");
     }
