@@ -1,4 +1,4 @@
-package Lesson1_Homework;
+package lesson1Homework;
 
 public class Mortgage {
     public static void main(String[] args) {

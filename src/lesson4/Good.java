@@ -1,4 +1,4 @@
-package Lesson4;
+package lesson4;
 
 //шаблон товара
 public class Good {

@@ -1,4 +1,4 @@
-package Lesson1_Homework;
+package lesson1Homework;
 
 public class Closest_Num {
     public static void main(String[] args) {
