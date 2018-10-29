@@ -1,30 +1,32 @@
 package lesson4Homework.task2;
 
-public class LinkedList {
+class LinkedList {
     private Node head;
     private Node tail;
+    private int index=0;
 
     void add (int value){
         Node a = new Node();
         a.value = value;
+        a.index = index;
         if (head == null){
             head = a;
             tail = a;
         } else {
-           a.next = head;
-           head = a;
+           tail = a;
+           index++;
         }
     }
 
     void printList() {
-        Node t = new Node();
+        Node t = head;
         while (t != null) {
-            System.out.println(t.value + " ");
+            System.out.println(t.index + ": " + t.value);
             t=t.next;
         }
     }
 
-    void delete(int value) {
+    void delete(int index) {
         if(head == null)
             return;
 
@@ -34,14 +36,14 @@ public class LinkedList {
             return;
         }
 
-        if (head.value == value) {
+        if (head.index == index) {
             head = head.next;
             return;
         }
 
         Node t = head;
         while (t.next != null) {
-            if (t.next.value == value) {
+            if (t.next.index == index) {
                 if(tail == t.next)
                 {
                     tail = t;
@@ -52,5 +54,4 @@ public class LinkedList {
             t = t.next;
         }
     }
-
 }

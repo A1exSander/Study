@@ -6,15 +6,11 @@ public class Main {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.add(5);
-        list.add(6);
         list.add(8);
-        list.add(10);
+        list.add(9);
 
-        list.printList();
-        System.out.println();
+        System.out.println(list.toString());
 
-        list.delete(6);
-        list.delete(0);
 
         list.printList();
         System.out.println();
