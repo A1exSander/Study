@@ -9,13 +9,14 @@ class LinkedList {
         Node a = new Node();
         a.value = value;
         a.index = index;
-        if (head == null){
+        if (tail == null){
             head = a;
             tail = a;
         } else {
-           tail = a;
-           index++;
+            tail.next = a;
+            tail = a;
         }
+        index++;
     }
 
     void printList() {

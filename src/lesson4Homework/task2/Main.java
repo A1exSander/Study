@@ -8,6 +8,13 @@ public class Main {
         list.add(5);
         list.add(8);
         list.add(9);
+        list.add(10);
+        list.add(14);
+
+        list.delete(1);
+        list.delete(10);
+
+        list.add(500);
 
         System.out.println(list.toString());
 
