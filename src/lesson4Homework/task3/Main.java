@@ -10,13 +10,23 @@ package lesson4Homework.task3;
 public class Main {
     public static void main(String[] args) {
         Book book1 = new Book();
+        Book book2 = new Book();
+        Book book3 = new Book();
         book1.author="Ф.М. Достаевский";
+        book2.author="А. Сапковский";
+        book3.author="А. Рэнд";
         book1.name ="Преступление и наказание";
+        book2.name ="Сезон гроз";
+        book3.name ="Атлант расправил плечи";
 
         Library lib = new Library();
         lib.put(book1, 6);
+        lib.put(book2, 20);
+        lib.put(book3, 10);
 
         lib.get(book1, 3);
+        lib.get(book2, 1);
+        lib.get(book3, 4);
     }
 
 }
