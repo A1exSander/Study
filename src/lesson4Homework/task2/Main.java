@@ -11,10 +11,12 @@ public class Main {
         list.add(10);
         list.add(14);
 
-        list.delete(1);
-        list.delete(10);
+        list.delete(3);
+        list.delete(7);
 
         list.add(500);
+
+        list.find(66);
 
         System.out.println(list.toString());
 

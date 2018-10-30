@@ -8,15 +8,16 @@ class LinkedList {
     void add (int value){
         Node a = new Node();
         a.value = value;
-        a.index = index;
         if (tail == null){
             head = a;
             tail = a;
+            tail.index = 0;
+
         } else {
             tail.next = a;
+            tail.next.index=tail.index+1;
             tail = a;
         }
-        index++;
     }
 
     void printList() {
@@ -50,6 +51,18 @@ class LinkedList {
                     tail = t;
                 }
                 t.next = t.next.next;
+                t.next.index--;
+                return;
+            }
+            t = t.next;
+        }
+    }
+
+    void find(int index) {
+        Node t = head;
+        while (t.next != null) {
+            if (t.next.index == index) {
+                System.out.println(t.next.index + ": " + t.next.value);
                 return;
             }
             t = t.next;
