@@ -21,7 +21,7 @@ public class Main {
 
         Library lib = new Library();
         lib.put(book1, 6);
-        lib.put(book2, 20);
+        lib.put(book2, 8);
         lib.put(book3, 10);
 
         lib.get(book1, 3);

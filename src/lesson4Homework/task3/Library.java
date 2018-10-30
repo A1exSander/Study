@@ -4,7 +4,8 @@ import javax.sound.midi.Soundbank;
 import java.sql.SQLOutput;
 
 public class Library {
-    int spaceMax, resSpace=0, counter;
+    int spaceMax, counter;
+    private int resSpace=0;
 
 //    public Library(int spaceMax) {
 //        this.spaceMax = spaceMax;
@@ -13,7 +14,7 @@ public class Library {
 
     Book[] lib = new Book[spaceMax=50];
     void put (Book book, int quantity){
-        if (resSpace+quantity<spaceMax){
+        if (resSpace<spaceMax){
             for (int i=0; i<quantity; i++) {
                 if (lib[i] == null) {
                     lib[i] = book;
