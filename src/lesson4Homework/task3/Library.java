@@ -1,10 +1,7 @@
 package lesson4Homework.task3;
 
-import javax.sound.midi.Soundbank;
-import java.sql.SQLOutput;
-
 public class Library {
-    int spaceMax, counter;
+    int spaceMax=50, counter=0;
     private int resSpace=0;
 
 //    public Library(int spaceMax) {
@@ -12,17 +9,24 @@ public class Library {
 //    }
 //    Спросить, почему не задается массив заданного размера
 
-    Book[] lib = new Book[spaceMax=50];
+    Book[] lib = new Book[spaceMax];
     void put (Book book, int quantity){
         if (resSpace<spaceMax){
-            for (int i=0; i<quantity; i++) {
-                if (lib[i] == null) {
+            counter = quantity;
+            for (int i=0; i<spaceMax; i++) {
+                if ((lib[i] == null) && counter>0) {
                     lib[i] = book;
                     lib[i].index = i;
                     resSpace++;
+                    counter--;
+                    if (resSpace == spaceMax){
+                        System.out.println("Место закончилось. Внесено " + (quantity-counter) + " экземпляров книги");
+                        break;
+                    }
                 }
+
             }
-            System.out.println("Внесено " + quantity + " экземпляров книги " + book.author + " " + book.name);
+            if (counter==0) System.out.println("Внесено " + quantity + " экземпляров книги " + book.author + " " + book.name);
 
         }
         else System.out.println("Не хватает места");
@@ -36,7 +40,7 @@ public class Library {
                 System.out.println("Изъято " + quantity + " экземпляров книги " + book.author + " " + book.name);
                 break;
             }
-            if (lib[i] == book) {
+            if (book.equals(lib[i])) {
                 counter--;
                 lib[i] = null;
                 resSpace--;
@@ -45,7 +49,7 @@ public class Library {
         if (counter>0){
             quantity=quantity-counter;
             System.out.println("Изъято " + quantity + " экземпляров книги " + book.author + " " + book.name);
-            System.out.println("Больше в билбиотеке нет");
+            System.out.println("Больше в библиотеке нет");
         }
 
     }

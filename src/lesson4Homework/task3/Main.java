@@ -20,7 +20,7 @@ public class Main {
         book3.name ="Атлант расправил плечи";
 
         Library lib = new Library();
-        lib.put(book1, 6);
+        lib.put(book1, 8);
         lib.put(book2, 8);
         lib.put(book3, 10);
 
