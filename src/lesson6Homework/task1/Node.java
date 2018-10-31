@@ -21,5 +21,15 @@ Node prev;
         this.value = value;
         this.next = next;
         this.prev = prev;
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "value=" + value +
+                ", index=" + index +
+                '}';
     }
 }

@@ -7,18 +7,18 @@ class LinkedList implements List, Queue, Stack {
 
     @Override
     public void add(Node node, int index) {
-        if (index>0 && index<=size) {
+        if (index>=0 && index<=size) {
             if (index == 0) shift(node);
             else if (index == size) push(node);
             else {
 
 
-                Node temp = head;
-                for (int i = index; i > 0; i--) temp = temp.next;
+                Node temp = get(index);
                 temp.prev.next = node;
                 node.prev = temp.prev;
                 node.next = temp;
                 temp.prev = node;
+                size++;
             }
         } else System.out.println("Неверный индекс");
     }
@@ -26,36 +26,29 @@ class LinkedList implements List, Queue, Stack {
     @Override
     public void remove(int index) {
         if (index>0 && index<=size) {
-            Node temp = head;
-            for (int i = index; i > 0; i--) temp = temp.next;
+            Node temp = get(index);
             if (temp == head) head = temp.next;
+            if (temp == tail) tail = tail.prev;
                 temp.prev.next = temp.next;
                 temp.next.prev = temp.prev;
                 temp = null;
+                size--;
 
         } else System.out.println("Неверный индекс");
 
     }
-
     @Override
-    public int get(int index) {
-        if (index>=0 && index<size) {
-        if (size/2 < index) {
+    public Node get(int index) {
+        if (index>0 && index<size) {
             Node temp = head;
             for (int i = 0; i<index; i++) {
                 temp = temp.next;
-                temp.index = i;
+                temp.index = i+1;
             }
-            return temp.index;
-        } else {
-            Node temp = tail;
-            for (int i = size; i >= index; i--) {
-                temp = temp.prev;
-                temp.index = i;
-            }
-            return temp.index;
-        }
-        } else return 0;
+            return temp;
+        } else if (index==0) return head;
+        else if (index==size-1) return tail;
+        else return null;
 
     }
 
@@ -119,6 +112,6 @@ class LinkedList implements List, Queue, Stack {
             t=t.next;
             i++;
         }
-    }
 
+    }
 }

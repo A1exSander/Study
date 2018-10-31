@@ -25,10 +25,15 @@ public class Main {
         Node temp3 = new Node(2);
         Node temp4 = new Node(3);
         Node temp5 = new Node(4);
+        Node temp6 = new Node(5);
+        Node temp7 = new Node(6);
         LinkedList linkedlist = new LinkedList();
-        linkedlist.push (temp);
-        linkedlist.push (temp2);
-        linkedlist.push (temp3);
+        linkedlist.push(temp);
+        linkedlist.push(temp2);
+        linkedlist.push(temp3);
+        linkedlist.shift(temp4);
+        linkedlist.shift(temp5);
+        linkedlist.printList();
 //        linkedlist.unshift();
 //        linkedlist.printList();
 //        System.out.println();
@@ -37,10 +42,14 @@ public class Main {
 //        System.out.println();
 //        linkedlist.shift(temp4);
 //        linkedlist.printList();
-        linkedlist.add(temp5, 2);
+        System.out.println();
+        System.out.println(linkedlist.get(0).toString());
+        System.out.println(linkedlist.size());
+        System.out.println();
+        linkedlist.remove(3);
         linkedlist.printList();
         System.out.println();
-        linkedlist.remove(1);
+        linkedlist.add(temp6, 1);
         linkedlist.printList();
     }
 }
