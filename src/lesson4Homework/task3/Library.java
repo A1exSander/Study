@@ -1,26 +1,27 @@
 package lesson4Homework.task3;
 
 public class Library {
-    int spaceMax=50, counter=0;
+    int spaceMax, counter=0;
     private int resSpace=0;
+    Book[] lib;
 
-//    public Library(int spaceMax) {
-//        this.spaceMax = spaceMax;
-//    }
-//    Спросить, почему не задается массив заданного размера
+    public Library(int spaceMax) {
+        this.spaceMax = spaceMax;
+        Book[] lib = new Book[spaceMax];
+        this.lib=lib;
+    }
 
-    Book[] lib = new Book[spaceMax];
     void put (Book book, int quantity){
         if (resSpace<spaceMax){
             counter = quantity;
             for (int i=0; i<spaceMax; i++) {
-                if ((lib[i] == null) && counter>0) {
+                if (lib[i] == null && counter>0) {
                     lib[i] = book;
                     lib[i].index = i;
                     resSpace++;
                     counter--;
                     if (resSpace == spaceMax){
-                        System.out.println("Место закончилось. Внесено " + (quantity-counter) + " экземпляров книги");
+                        System.out.println("Место закончилось. Внесено " + (quantity-counter) + " экземпляров книги" + book.author + " " + book.name);
                         break;
                     }
                 }
@@ -46,11 +47,13 @@ public class Library {
                 resSpace--;
             }
         }
-        if (counter>0){
-            quantity=quantity-counter;
-            System.out.println("Изъято " + quantity + " экземпляров книги " + book.author + " " + book.name);
-            System.out.println("Больше в библиотеке нет");
+        if (counter>0) {
+            quantity = quantity - counter;
+            if (quantity == 0) System.out.println("Книги " + book.author + " " + book.name + " в библиотеке нет");
+            else {
+                System.out.println("Изъято " + quantity + " экземпляров книги " + book.author + " " + book.name);
+                System.out.println("Больше в библиотеке нет");
+            }
         }
-
     }
 }

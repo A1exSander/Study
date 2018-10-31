@@ -19,14 +19,16 @@ public class Main {
         book2.name ="Сезон гроз";
         book3.name ="Атлант расправил плечи";
 
-        Library lib = new Library();
-        lib.put(book1, 8);
-        lib.put(book2, 8);
+        Library lib = new Library(100);
+        lib.put(book1, 50);
+        lib.put(book2, 0);
         lib.put(book3, 10);
 
         lib.get(book1, 3);
         lib.get(book2, 1);
         lib.get(book3, 4);
+
+        lib.put(book2, 3);
     }
 
 }
