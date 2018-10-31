@@ -24,17 +24,23 @@ public class Main {
         Node temp2 = new Node(1);
         Node temp3 = new Node(2);
         Node temp4 = new Node(3);
+        Node temp5 = new Node(4);
         LinkedList linkedlist = new LinkedList();
         linkedlist.push (temp);
         linkedlist.push (temp2);
         linkedlist.push (temp3);
-        linkedlist.unshift();
+//        linkedlist.unshift();
+//        linkedlist.printList();
+//        System.out.println();
+//        linkedlist.pop();
+//        linkedlist.printList();
+//        System.out.println();
+//        linkedlist.shift(temp4);
+//        linkedlist.printList();
+        linkedlist.add(temp5, 2);
         linkedlist.printList();
         System.out.println();
-        linkedlist.pop();
-        linkedlist.printList();
-        System.out.println();
-        linkedlist.shift(temp4);
+        linkedlist.remove(1);
         linkedlist.printList();
     }
 }

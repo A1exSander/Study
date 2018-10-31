@@ -7,20 +7,39 @@ class LinkedList implements List, Queue, Stack {
 
     @Override
     public void add(Node node, int index) {
-        if (index == 0) shift(node);
-        else if (index == size-1) push(node);
-        else {
+        if (index>0 && index<=size) {
+            if (index == 0) shift(node);
+            else if (index == size) push(node);
+            else {
 
-        }
+
+                Node temp = head;
+                for (int i = index; i > 0; i--) temp = temp.next;
+                temp.prev.next = node;
+                node.prev = temp.prev;
+                node.next = temp;
+                temp.prev = node;
+            }
+        } else System.out.println("Неверный индекс");
     }
 
     @Override
     public void remove(int index) {
+        if (index>0 && index<=size) {
+            Node temp = head;
+            for (int i = index; i > 0; i--) temp = temp.next;
+            if (temp == head) head = temp.next;
+                temp.prev.next = temp.next;
+                temp.next.prev = temp.prev;
+                temp = null;
+
+        } else System.out.println("Неверный индекс");
 
     }
 
     @Override
     public int get(int index) {
+        if (index>=0 && index<size) {
         if (size/2 < index) {
             Node temp = head;
             for (int i = 0; i<index; i++) {
@@ -30,12 +49,13 @@ class LinkedList implements List, Queue, Stack {
             return temp.index;
         } else {
             Node temp = tail;
-            for (int i = size; i>=index; i--) {
+            for (int i = size; i >= index; i--) {
                 temp = temp.prev;
                 temp.index = i;
             }
             return temp.index;
         }
+        } else return 0;
 
     }
 
