@@ -1,18 +1,22 @@
 package Lesson7Homework;
 
 public class Pupil {
-    ExamResult[] examResults = new ExamResult[2];
     private int id;
     public Pupil(int id) {
         this.id = id;
     }
+    ExamResult[] examResults = new ExamResult[2];
+
 
     void setExams(String exams[], int marks[]) {
         if (exams.length == marks.length) {
             for (int i = 0; i<exams.length; i++){
                 if (marks[i]>0 && marks[i]<6) {
                     examResults[i] = new ExamResult(exams[i], marks[i]);
-                } else System.out.println("Ошибка! Оценки должны указываться цифрой от 1 до 5");
+                } else {
+                    System.out.println("Ошибка! Оценки должны указываться цифрой от 1 до 5");
+                    break;
+                }
 
             }
         } else System.out.println("Ошибка! Количество оценок не соответствует количеству предметов. Проверьте исходные данные");
