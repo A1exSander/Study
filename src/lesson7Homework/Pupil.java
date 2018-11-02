@@ -1,4 +1,4 @@
-package Lesson7Homework;
+package lesson7Homework;
 
 public class Pupil {
     private int id;

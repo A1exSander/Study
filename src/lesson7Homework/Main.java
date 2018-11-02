@@ -1,4 +1,4 @@
-package Lesson7Homework;
+package lesson7Homework;
 
 //        Класс Pupil описывается с атрибутами:
 //        id и результат экзаменов (массив) ExamResult[].
