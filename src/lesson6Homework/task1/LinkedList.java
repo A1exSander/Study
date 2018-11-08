@@ -11,8 +11,6 @@ class LinkedList implements List, Queue, Stack {
             if (index == 0) shift(node);
             else if (index == size) push(node);
             else {
-
-
                 Node temp = get(index);
                 temp.prev.next = node;
                 node.prev = temp.prev;
@@ -48,7 +46,10 @@ class LinkedList implements List, Queue, Stack {
             return temp;
         } else if (index==0) return head;
         else if (index==size-1) return tail;
-        else return null;
+        else {
+            System.out.println("Неверный индекс");
+            return null;
+        }
 
     }
 

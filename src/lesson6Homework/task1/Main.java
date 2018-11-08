@@ -43,7 +43,7 @@ public class Main {
 //        linkedlist.shift(temp4);
 //        linkedlist.printList();
         System.out.println();
-        System.out.println(linkedlist.get(0).toString());
+        System.out.println(linkedlist.get(3).toString());
         System.out.println(linkedlist.size());
         System.out.println();
         linkedlist.remove(3);

@@ -15,13 +15,6 @@ Node prev;
     public Node(int value, int index) {
         this.value = value;
         this.index = index;
-    }
-
-    public Node(Node prev, int value, Node next) {
-        this.value = value;
-        this.next = next;
-        this.prev = prev;
-
 
     }
 
