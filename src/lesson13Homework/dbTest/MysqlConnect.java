@@ -23,9 +23,44 @@ public class MysqlConnect {
             // любые действия с базой
         }
     }
+    public static void addTeacher(String name, String surname) throws SQLException, ClassNotFoundException {
+
+        String sql = "INSERT INTO Teacher (name, surname) VALUES('"+name+"', '"+surname+"');";
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        try (Connection connection =
+                     DriverManager.getConnection(connectUrl, user, password)){
+            Statement statement = connection.createStatement();
+            int row = statement.executeUpdate(sql);
+            System.out.println(row);
+        }
+    }
+
+    public static void addSubject(String title, int duration, int price, int teacher_id) throws SQLException, ClassNotFoundException {
+
+        String sql = "INSERT INTO Subject (title, duration,price,  teacher_id) VALUES('"+title+"',"+duration+","+price+", "+teacher_id+");";
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        try (Connection connection =
+                     DriverManager.getConnection(connectUrl, user, password)){
+            Statement statement = connection.createStatement();
+            int row = statement.executeUpdate(sql);
+            System.out.println(row);
+        }
+    }
+
+    public static void getMaxSubject() throws SQLException, ClassNotFoundException {
+
+        String sql = "SELECT max(price) FROM Subject;";
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        try (Connection connection =
+                     DriverManager.getConnection(connectUrl, user, password)){
+            Statement statement = connection.createStatement();
+            int row = statement.executeUpdate(sql);
+            System.out.println(row);
+        }
+    }
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        voidForUsingDB();
+
     }
 
 }
