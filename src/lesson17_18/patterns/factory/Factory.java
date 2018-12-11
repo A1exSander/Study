@@ -1,4 +1,4 @@
-package lesson17.patterns.factory;
+package lesson17_18.patterns.factory;
 
 abstract class Handler {
     abstract void read();

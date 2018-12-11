@@ -1,4 +1,4 @@
-package lesson17.patterns.builder;
+package lesson17_18.patterns.builder;
 
 public class Director {
     private ComputerBuilder computerBuilder;

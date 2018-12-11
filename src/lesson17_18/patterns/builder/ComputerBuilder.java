@@ -1,4 +1,4 @@
-package lesson17.patterns.builder;
+package lesson17_18.patterns.builder;
 
 abstract class ComputerBuilder {
     Computer computer;

@@ -1,4 +1,4 @@
-package lesson17.patterns.singleton;
+package lesson17_18.patterns.singleton;
 
 import java.io.File;
 import java.io.FileInputStream;
