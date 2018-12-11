@@ -7,7 +7,7 @@ import java.io.InputStream;
 public class CryptoInputStream extends FilterInputStream {
 
     private byte[] password;
-    private int currentPos;
+    private int currentPos=0;
 
     public CryptoInputStream(InputStream in, byte[] password) {
         super(in);

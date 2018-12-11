@@ -7,7 +7,7 @@ import java.io.OutputStream;
 public class CryptoOutputStream extends FilterOutputStream {
 
     private byte[] password;
-    private int currentPos;
+    private int currentPos=0;
 
     public CryptoOutputStream(OutputStream out, byte[] password) {
         super(out);

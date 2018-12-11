@@ -13,7 +13,10 @@ package patternsHomework.xorFiles;
 //InputStream in = new CryptoInputStream(new FileInputStream("test.bin"), password);
 //OutputStream out = new CryptoOutputStream(new FileOutputStream("test.bin"), password);
 
+import com.mysql.cj.x.protobuf.MysqlxExpr;
+
 import java.io.*;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,7 +30,7 @@ public class Main {
                 InputStream in = new CryptoInputStream(new FileInputStream(file1), password.getBytes());
                 OutputStream out = new CryptoOutputStream(new FileOutputStream(file2), password.getBytes())
         ) {
-            byte[] buf = new byte[500];
+            byte[] buf = new byte[in.available()];
             while ((in.read(buf)) > 0){
                 out.write(buf);
             }
@@ -40,7 +43,7 @@ public class Main {
                 InputStream in = new CryptoInputStream(new FileInputStream(file2), password.getBytes());
                 OutputStream out = new CryptoOutputStream(new FileOutputStream(file3), password.getBytes())
         ) {
-            byte[] buf = new byte[500];
+            byte[] buf = new byte[1];
             while ((in.read(buf)) > 0){
                 out.write(buf);
             }
