@@ -10,6 +10,21 @@ package patternsHomework.logger;
 //Запись в файл должна работать!
 
 
-public class Main {
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите сообщение");
+        String message;
+        message = scanner.nextLine();
+
+        Strategy log1 = new Strategy(new ConsoleLogger());
+        Strategy log2 = new Strategy(new FileLogger());
+        Strategy log3 = new Strategy(new TimeFileLogger());
+        log1.write(message);
+        log2.write(message);
+        log3.write(message);
+
+    }
 }

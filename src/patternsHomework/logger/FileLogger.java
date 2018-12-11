@@ -1,4 +1,19 @@
 package patternsHomework.logger;
 
-public class FileLogger {
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.charset.Charset;
+
+public class FileLogger implements ILogger{
+
+    @Override
+    public void write(String message) {
+        try (OutputStream out = new FileOutputStream("log.txt")){
+            byte[] buffer = message.getBytes(Charset.defaultCharset());
+            out.write(buffer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

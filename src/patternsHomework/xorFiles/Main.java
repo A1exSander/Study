@@ -13,10 +13,7 @@ package patternsHomework.xorFiles;
 //InputStream in = new CryptoInputStream(new FileInputStream("test.bin"), password);
 //OutputStream out = new CryptoOutputStream(new FileOutputStream("test.bin"), password);
 
-import com.mysql.cj.x.protobuf.MysqlxExpr;
-
 import java.io.*;
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {

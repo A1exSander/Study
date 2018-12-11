@@ -1,5 +1,5 @@
 package patternsHomework.logger;
 
 public interface ILogger {
-    void write();
+    void write(String message);
 }
