@@ -28,7 +28,6 @@ public class Main {
                 OutputStream out = new CryptoOutputStream(new FileOutputStream(file2), password.getBytes())
         ) {
             byte[] buf = new byte[500];
-            int len;
             while ((in.read(buf)) > 0){
                 out.write(buf);
             }
