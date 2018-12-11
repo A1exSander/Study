@@ -9,7 +9,8 @@ public class FileLogger implements ILogger{
 
     @Override
     public void write(String message) {
-        try (OutputStream out = new FileOutputStream("log.txt")){
+        try (OutputStream out = new FileOutputStream("log.txt", true)){
+            message = message + "\n";
             byte[] buffer = message.getBytes(Charset.defaultCharset());
             out.write(buffer);
         } catch (IOException e) {

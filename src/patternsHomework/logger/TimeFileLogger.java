@@ -11,8 +11,8 @@ public class TimeFileLogger implements ILogger {
 
     @Override
     public void write(String message) {
-        try (OutputStream out = new FileOutputStream("log.txt")){
-            message = message + "\n" + date;
+        try (OutputStream out = new FileOutputStream("datedLog.txt", true)){
+            message = message + "\n" + date + "\n";
             byte[] buffer = message.getBytes(Charset.defaultCharset());
             out.write(buffer);
         } catch (IOException e) {
