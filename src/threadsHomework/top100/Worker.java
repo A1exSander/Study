@@ -1,8 +1,6 @@
 package threadsHomework.top100;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 
@@ -11,7 +9,6 @@ public class Worker implements Runnable {
     BlockingQueue<String> queue;
     BlockingQueue<Map<String, Integer>> localMapsQueue;
     private Map<String, Integer> localMap = new HashMap<>();
-    private HashSet<String> words = new HashSet<>();
 
 
     public Worker(BlockingQueue queue, BlockingQueue localMapsQueue) {
