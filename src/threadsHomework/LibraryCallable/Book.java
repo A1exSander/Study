@@ -17,9 +17,9 @@ public class Book {
     @Override
     public String toString() {
         return index +
-                ": [author='" + author + '\'' +
-                ", name='" + name + '\'' +
-                ", takeHomePermission:" + takeHomePermission + "]";
+                ": [Автор='" + author + '\'' +
+                ", Название='" + name + '\'' +
+                ", Можно взять домой:" + takeHomePermission + "]";
     }
 
     public int getIndex() {

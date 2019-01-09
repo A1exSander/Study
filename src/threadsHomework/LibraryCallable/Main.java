@@ -8,10 +8,10 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Book book1 = new Book(1,"aaaa", "aaaa", true);
-        Book book2 = new Book(2,"bbbb", "bbbb", false);
-        Book book3 = new Book(3,"cccc", "ccccc", true);
-        Book book4 = new Book(4,"dddd", "ddddd", false);
+        Book book1 = new Book(1,"Айн Рэнд", "Атлант расправил плечи", true);
+        Book book2 = new Book(2,"Лев Толстой", "Война и Мир", false);
+        Book book3 = new Book(3,"Федор Достаевский", "Преступление и наказание", true);
+        Book book4 = new Book(4,"Рэй Брэдбери", "Вино из одуванчиков", false);
 
         Library library = new Library();
 
