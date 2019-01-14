@@ -20,6 +20,7 @@ public class Transaction implements Runnable {
 
     @Override
     public void run() {
+        date = new Date();
         if(src.getMoney() < money || src == dst || money <= 0) {
             System.out.println("Транзакция не удалась: на счету недостаточно средств или введены неверные данные");
             Thread.currentThread().interrupt();
@@ -36,7 +37,7 @@ public class Transaction implements Runnable {
                 synchronized (obj2) {
                     src.setMoney(src.getMoney()-money);
                     dst.setMoney(dst.getMoney()+money);
-                    System.out.println("Транзакция прошла успешно");
+                    System.out.println("Транзакция прошла успешно в " + date);
                 }
             }
 

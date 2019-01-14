@@ -22,7 +22,7 @@ public class Reader implements Runnable {
 
         Scanner scanner = new Scanner(System.in);
         while(true) {
-            try {
+//            try {
                 library.showLib();
                 System.out.println("Введите номер книги, которую хотите забрать");
                 int index = scanner.nextInt();
@@ -62,27 +62,30 @@ public class Reader implements Runnable {
                     System.out.println("Хорошо");
                     System.out.println();
                 }
-            } catch (InputMismatchException e) {
-                System.out.println("Вы ввели неверные данные");
+//            } catch (InputMismatchException e) {
+//                System.out.println("Вы ввели неверные данные");
                 return;
-            }
+//            }
         }
 
-        System.out.println("Книги, взятые домой:");
-        for (Map.Entry entry: takenHome.entrySet()) {
-            System.out.println (entry);
-        }
 
-        System.out.println("Книги, взятые в читальный зал:");
-        for (Map.Entry entry: takenLib.entrySet()) {
-            System.out.println(entry);
-        }
         System.out.println("Хотите вернуть книги?");
 
         boolean returnBook = scanner.nextBoolean();
         if (returnBook) {
             while (true) {
                 try {
+                    
+                    System.out.println("Книги, взятые домой:");
+                    for (Map.Entry entry: takenHome.entrySet()) {
+                        System.out.println (entry);
+                    }
+
+                    System.out.println("Книги, взятые в читальный зал:");
+                    for (Map.Entry entry: takenLib.entrySet()) {
+                        System.out.println(entry);
+                    }
+
                     System.out.println("Введите индекс книги, которую хотите вернуть");
                     int index = scanner.nextInt();
                     System.out.println("Сколько экземпляров возвращаете?");
@@ -109,7 +112,7 @@ public class Reader implements Runnable {
                     }
 
 
-                    System.out.println("Хотите вернуть еще одну книгу?");
+                    System.out.println("Хотите вернуть еще одну книгу? (true/false)");
 
                     boolean more = scanner.nextBoolean();
                     if (!more) {

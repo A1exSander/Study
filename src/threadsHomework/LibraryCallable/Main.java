@@ -20,7 +20,7 @@ public class Main {
         library.addBook(book3, 6);
         library.addBook(book4, 9);
 
-        Reader reader1 = new Reader("Коля", library);
+        Reader reader1 = new Reader("Софи", library);
 
         new Thread(reader1).start();
 
