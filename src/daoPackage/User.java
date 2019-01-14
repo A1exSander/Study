@@ -6,6 +6,9 @@ public class User {
     int id;
     String login;
 
+    public User() {
+    }
+
     public User(int id, String login) {
         this.id = id;
         this.login = login;
@@ -26,6 +29,14 @@ public class User {
     public void setLogin(String login) {
         this.login = login;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                '}';
+    }
 }
 
 class Article{
@@ -33,6 +44,9 @@ class Article{
     int id;
     String title;
     int idUser;
+
+    public Article() {
+    }
 
     public Article(int id, String title, int idUser) {
         this.id = id;
@@ -64,7 +78,14 @@ class Article{
         this.idUser = idUser;
     }
 
-
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", idUser=" + idUser +
+                '}';
+    }
 }
 
 

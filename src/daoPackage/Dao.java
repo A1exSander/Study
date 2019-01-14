@@ -7,5 +7,5 @@ public interface Dao {
     void delete(Object o);
     void update(Object o);
     List<?> getAll();
-    Object getById();
+    Object getById(int id);
 }

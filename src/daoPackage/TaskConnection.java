@@ -13,7 +13,7 @@ public class TaskConnection {
                     DriverManager.getConnection("jdbc:sqlite:task.db")) {
 
             Statement statement = connection.createStatement();
-            statement.executeUpdate(create);
+            System.out.println(statement.executeUpdate(create));
         }
 
 
@@ -25,18 +25,19 @@ public class TaskConnection {
         try(Connection connection =
                 DriverManager.getConnection("jdbc:sqlite:task.db")) {
             Statement statement = connection.createStatement();
-            statement.executeUpdate(update);
+            System.out.println(statement.executeUpdate(update));
         }
     }
 
-    protected ResultSet querryTable(String querry) throws SQLException {
+    protected Object querryTable(String querry) throws SQLException {
         DriverManager.registerDriver(new JDBC());
 
         try(Connection connection =
                     DriverManager.getConnection("jdbc:sqlite:task.db")) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(querry);
-            return resultSet;
+            Object object = resultSet;
+            return object;
         }
     }
 }
